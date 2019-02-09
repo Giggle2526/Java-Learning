@@ -43,4 +43,10 @@ public class Graph{
 	}
 	public Iterable<Integer> adj(int v)
 	{ return adj[v]; }
+	public static void main(String[] args) {
+		Graph G = new Graph;
+		G.V = StdIn.readInt();
+		G.E = StdIn.readInt();
+		G.Graph(G.V);
+	}
 }
