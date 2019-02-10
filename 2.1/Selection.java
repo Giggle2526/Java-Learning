@@ -9,7 +9,22 @@ public class Selection{
 			for(int j = i+1; j < N; j++)
 				if(less(a[j],a[min])) min = j;
 			exch(a,i,min);
+			showOut(a);
 		}
+	}
+	public static void showOut(Comparable[] a)
+	{
+		int N = a.length;
+		for(int i = 0; i < N; i++){
+			double num = (double)a[i];
+			double x = 1.0*i/N;
+			double y = num/2;
+			double rw = 0.5/N;
+			double rh = num/2;
+			StdDraw.filledRectangle(x, y, rw, rh);
+		}
+		StdDraw.show(1);
+		StdDraw.clear(StdDraw.WHITE);
 	}
 	private static boolean less(Comparable v,Comparable w)
 	{ return v.compareTo(w) < 0; }

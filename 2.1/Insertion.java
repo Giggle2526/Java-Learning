@@ -6,9 +6,25 @@ public class Insertion{
 		int N = a.length;
 		for(int i = 1; i < N; i++)
 		{
-			for(int j = i; j > 0 && less(a[j],a[j-1]); j--)
+			for(int j = i; j > 0 && less(a[j],a[j-1]); j--){
 				exch(a,j,j-1);
+				showOut(a);
+			}
 		}
+	}
+	public static void showOut(Comparable[] a)
+	{
+		int N = a.length;
+		for(int i = 0; i < N; i++){
+			double num = (double)a[i];
+			double x = 1.0*i/N;
+			double y = num/2;
+			double rw = 0.5/N;
+			double rh = num/2;
+			StdDraw.filledRectangle(x, y, rw, rh);
+		}
+		StdDraw.show(1);
+		StdDraw.clear(StdDraw.WHITE);
 	}
 	private static boolean less(Comparable v,Comparable w)
 	{ return v.compareTo(w) < 0; }
@@ -26,4 +42,11 @@ public class Insertion{
 			if(less(a[i],a[i-1])) return false;
 		return true;
 	}
+	// public static void main(String[] args) {
+	// 	int N = StdIn.readInt();
+	// 	Double[] a = new Double[N];
+	// 	for(int i = 0; i < N; i++)
+	// 		a[i] = StdRandom.random();
+	// 	sort(a);
+	// }
 }
