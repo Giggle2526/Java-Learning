@@ -1,7 +1,8 @@
 import edu.princeton.cs.algs4.*;
 
 public class Shell{
-	public static void sort(Comparable[] a){
+	public static void sort(Comparable[] a)
+	{
 		int N = a.length;
 		int h = 1;
 		while(h < N/3) h = 3*h + 1;
@@ -15,6 +16,7 @@ public class Shell{
 			showOut(a);
 		}
 	}
+
 	public static void showOut(Comparable[] a)
 	{
 		int N = a.length;

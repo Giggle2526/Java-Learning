@@ -2,12 +2,19 @@ import edu.princeton.cs.algs4.*;
 
 public class Merge{
 	private static Comparable[] aux;
-
 	public static void sort(Comparable[] a)
-	{
-		aux = new Comparable[a.length];
-		sort(a,0,a.length-1);
+	{//Botton to Up
+		int N = a.length;
+		aux = new Comparable[N];
+		for(int sz = 1; sz < N; sz += sz)
+			for(int lo = 0; lo < N-sz; lo += sz)
+				merge(a, lo, lo+sz-1, Math.min(lo+sz+sz-1,N-1));
 	}
+	// public static void sort(Comparable[] a)
+	// {//Up to Botton
+	// 	aux = new Comparable[a.length];
+	// 	sort(a,0,a.length-1);
+	// }
 	public static void merge(Comparable[] a, int lo, int mid, int hi)
 	{
 		int i = lo, j = mid + 1;
